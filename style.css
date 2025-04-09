@@ -183,4 +183,22 @@
     background-color: #e0f7fa;
     color: #006064;
   }
+  nav {
+    background-color: #222;
+    padding: 10px 0;
+    text-align: center;
+  }
+  
+  nav a {
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+    margin: 0 15px; /* separa los elementos */
+    font-size: 18px;
+    transition: color 0.3s ease;
+  }
+  
+  nav a:hover {
+    color: orange;
+  }
   
