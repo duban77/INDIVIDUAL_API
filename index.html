@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FakeStore Web</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="assets/logo.png" />
+  <script src="js/productos.js" defer></script>
+  <script src="js/buscador.js" defer></script>
+  <script src="js/filtro.js" defer></script>
+  <script src="js/favoritos.js" defer></script>
+  <script src="js/registro.js" defer></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+  <!-- Navegación Superior (6 pestañas) -->
+  <nav class="top-nav">
+    <a href="#inicio">Inicio</a>
+    <a href="#productos">Productos</a>
+    <a href="#categorias">Categorías</a>
+    <a href="#favoritos">Favoritos</a>
+    <a href="#registro">Registro</a>
+    <a href="#contacto">Contacto</a>
+  </nav>
+
+  <!-- Buscador y Filtro -->
+  <section id="inicio">
+    <input type="text" id="buscador" placeholder="Buscar productos...">
+    <select id="filtro">
+      <option value="all">Todas las categorías</option>
+      <option value="men's clothing">Hombres</option>
+      <option value="women's clothing">Mujeres</option>
+      <option value="jewelery">Joyas</option>
+      <option value="electronics">Electrónica</option>
+    </select>
+  </section>
+
+  <!-- Productos -->
+  <section id="productos" class="contenedor-productos"></section>
+
+  <!-- Favoritos -->
+  <section id="favoritos" class="contenedor-productos"></section>
+
+  <!-- Registro -->
+  <section id="registro">
+    <h2>Registro</h2>
+    <form id="formRegistro">
+      <input type="text" placeholder="Nombre" required>
+      <input type="text" placeholder="Apellido" required>
+      <input type="email" placeholder="Correo" required>
+      <input type="password" placeholder="Contraseña" required>
+      <input type="password" placeholder="Confirmar Contraseña" required>
+      <input type="date" required>
+      <input type="text" placeholder="País" required>
+      <button type="submit">Registrarse</button>
+    </form>
+  </section>
+
+  <!-- Footer (Menú inferior con 4 ítems) -->
+  <footer>
+    <a href="#inicio"><i class="fa fa-home"></i> Inicio</a>
+    <a href="#productos"><i class="fa fa-search"></i> Buscar</a>
+    <a href="#favoritos"><i class="fa fa-heart"></i> Favoritos</a>
+    <a href="#registro"><i class="fa fa-user"></i> Perfil</a>
+  </footer>
+
+</body>
+</html>
