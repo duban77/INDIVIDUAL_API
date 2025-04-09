@@ -183,4 +183,27 @@
     background-color: #e0f7fa;
     color: #006064;
   }
+  nav {
+    background-color: #222;
+    padding: 10px 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px; /* separación entre ítems */
+  }
+  
+  nav a {
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+    font-size: 16px;
+    padding: 6px 10px;
+    border-radius: 6px;
+    transition: background-color 0.3s ease;
+  }
+  
+  nav a:hover {
+    background-color: #444;
+    color: orange;
+  }
   
