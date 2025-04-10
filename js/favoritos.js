@@ -39,6 +39,7 @@ function agregarFavorito(id) {
 function mostrarFavoritos() {
   const favs = JSON.parse(localStorage.getItem("favoritos")) || [];
   const favData = productos.filter(p => favs.includes(p.id));
-  renderizarProductos(favData, "favoritos .contenedor-productos");
+  renderizarProductos(favData, "contenedor-favoritos");
+
 
 }
