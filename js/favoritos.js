@@ -1,16 +1,13 @@
-function agregarFavorito(id) {
-    let favs = JSON.parse(localStorage.getItem("favoritos")) || [];
-    if (!favs.includes(id)) {
-      favs.push(id);
-      localStorage.setItem("favoritos", JSON.stringify(favs));
-      alert("Agregado a favoritos");
-    }
-    mostrarFavoritos();
-  }
-  
-  function mostrarFavoritos() {
-    const favs = JSON.parse(localStorage.getItem("favoritos")) || [];
-    const favData = productos.filter(p => favs.includes(p.id));
-    renderizarProductos(favData, "favoritos");
-  }
-  
+function mostrarTodos() {
+  document.getElementById("productos").style.display = "block";
+  document.getElementById("favoritos").style.display = "none";
+  renderizarProductos(productos, "productos");
+}
+
+function mostrarFavoritos() {
+  const favs = JSON.parse(localStorage.getItem("favoritos")) || [];
+  const favData = productos.filter(p => favs.includes(p.id));
+  document.getElementById("productos").style.display = "none";
+  document.getElementById("favoritos").style.display = "block";
+  renderizarProductos(favData, "favoritos");
+}
