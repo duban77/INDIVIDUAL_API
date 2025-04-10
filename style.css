@@ -206,4 +206,23 @@
     background-color: #444;
     color: orange;
   }
+  @media (max-width: 480px) {
+    .producto h3 {
+      font-size: 16px;
+    }
+  
+    .producto p {
+      font-size: 14px;
+    }
+  
+    .producto button {
+      padding: 8px 12px;
+      font-size: 14px;
+    }
+  
+    #registro input, #registro button {
+      font-size: 14px;
+      padding: 10px;
+    }
+  }
   
