@@ -1,49 +1,42 @@
-let productos = [];
+// js/registro.js
 
-fetch("https://fakestoreapi.com/products")
-  .then(res => res.json())
-  .then(data => {
-    productos = data;
-    renderizarProductos(productos, "productos");
-    mostrarProductoDestacado();
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.11.0/firebase-app.js";
+import { getAuth, GoogleAuthProvider, signInWithPopup, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.11.0/firebase-auth.js";
+import { getFirestore, doc, setDoc, getDoc } from "https://www.gstatic.com/firebasejs/10.11.0/firebase-firestore.js";
+
+// Config
+const firebaseConfig = {
+  apiKey: "AIzaSyAgP3HY3aJjBR2ye-VTOg_2s-wAr9xYd6A",
+  authDomain: "apifakestoreapi.firebaseapp.com",
+  projectId: "apifakestoreapi",
+  storageBucket: "apifakestoreapi.appspot.com",
+  messagingSenderId: "222824660477",
+  appId: "1:222824660477:web:3d562bf37471f93922ad94"
+};
+
+const app = initializeApp(firebaseConfig);
+const auth = getAuth(app);
+const provider = new GoogleAuthProvider();
+const db = getFirestore(app);
+
+let usuario = null;
+
+// Iniciar sesión con Google
+window.loginConGoogle = async () => {
+  try {
+    const result = await signInWithPopup(auth, provider);
+    usuario = result.user;
+    alert("¡Bienvenido " + usuario.displayName + "!");
+    mostrarFavoritos(); // Recarga favoritos desde Firestore
+  } catch (error) {
+    console.error(error);
+  }
+};
+
+// Detectar usuario activo
+onAuthStateChanged(auth, (user) => {
+  if (user) {
+    usuario = user;
     mostrarFavoritos();
-  });
-
-function renderizarProductos(lista, contenedorId) {
-  const contenedor = document.getElementById(contenedorId);
-  contenedor.innerHTML = "";
-
-  const favs = JSON.parse(localStorage.getItem("favoritos")) || [];
-
-  lista.forEach(p => {
-    const esFavorito = favs.includes(p.id);
-    const div = document.createElement("div");
-    div.className = "producto";
-    div.innerHTML = `
-      <img src="${p.image}" alt="${p.title}">
-      <h3>${p.title}</h3>
-      <p>$${p.price}</p>
-      <button onclick="${esFavorito ? `quitarFavorito(${p.id})` : `agregarFavorito(${p.id})`}">
-        ${esFavorito ? "💔 Quitar" : "❤️ Agregar"}
-      </button>
-    `;
-    contenedor.appendChild(div);
-  });
-}
-
-function mostrarProductoDestacado() {
-  const random = Math.floor(Math.random() * productos.length);
-  const prod = productos[random];
-  const favs = JSON.parse(localStorage.getItem("favoritos")) || [];
-  const esFavorito = favs.includes(prod.id);
-
-  const div = document.getElementById("productoDestacado");
-  div.innerHTML = `
-    <img src="${prod.image}" alt="${prod.title}">
-    <h3>${prod.title}</h3>
-    <p>$${prod.price}</p>
-    <button onclick="${esFavorito ? `quitarFavorito(${prod.id})` : `agregarFavorito(${prod.id})`}">
-      ${esFavorito ? "💔 Quitar" : "❤️ Agregar"}
-    </button>
-  `;
-}
+  }
+});
