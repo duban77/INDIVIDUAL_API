@@ -34,6 +34,16 @@ function agregarFavorito(id) {
     mostrarToast("Ya está en favoritos 😎", "#555");
   }
   mostrarFavoritos();
+  renderizarProductos(productos, "productos");
+}
+
+function quitarFavorito(id) {
+  let favs = JSON.parse(localStorage.getItem("favoritos")) || [];
+  favs = favs.filter(favId => favId !== id);
+  localStorage.setItem("favoritos", JSON.stringify(favs));
+  mostrarToast("Quitado de favoritos 💔", "#c62828");
+  mostrarFavoritos();
+  renderizarProductos(productos, "productos");
 }
 
 function mostrarFavoritos() {
@@ -42,5 +52,6 @@ function mostrarFavoritos() {
   renderizarProductos(favData, "contenedor-favoritos");
 }
 
-// ✅ Exportar la función globalmente para usarla con onclick en HTML
+// Exponer funciones globalmente para que funcionen con onclick
 window.agregarFavorito = agregarFavorito;
+window.quitarFavorito = quitarFavorito;
