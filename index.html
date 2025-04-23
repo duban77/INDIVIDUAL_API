@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>FakeStore Web</title>
+  <title>FakeStore Web - API FakeStore</title>
   <link rel="stylesheet" href="style.css" />
   <link rel="icon" href="assets/logo.png" />
   <script src="js/productos.js" defer></script>
@@ -12,10 +12,39 @@
   <script src="js/favoritos.js" defer></script>
   <script src="js/registro.js" defer></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+  <style>
+    body {
+      background-image: url('assets/fondo-api.jpg');
+      background-size: cover;
+      background-attachment: fixed;
+    }
+    .descripcion-api {
+      background-color: rgba(255, 255, 255, 0.9);
+      padding: 1rem;
+      margin: 2rem;
+      border-radius: 10px;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    }
+    .info-extra {
+      text-align: center;
+      margin-top: 1rem;
+      font-weight: bold;
+      color: #333;
+    }
+    .imagen-api {
+      display: block;
+      margin: 1rem auto;
+      max-width: 300px;
+    }
+  </style>
 </head>
 <body>
 
-  <!-- Navegación Superior (6 pestañas) -->
+  <!-- Navegación Superior -->
   <nav>
     <a href="#inicio">Inicio</a>
     <a href="#productos">Productos</a>
@@ -25,14 +54,34 @@
     <a href="#contacto">Contacto</a>
   </nav>
 
-  <!-- Buscador y Filtro -->
+  <!-- Título -->
+  <h1 style="text-align: center; margin-top: 2rem;">API Utilizada: FakeStore API</h1>
+
+  <!-- Imagen relacionada -->
+  <img src="assets/imagen-api.png" alt="Imagen relacionada con la API" class="imagen-api" />
+
+  <!-- Descripción de la API -->
+  <div class="descripcion-api">
+    <h2>¿Qué es FakeStore API?</h2>
+    <p>
+      FakeStore API es una API gratuita que proporciona productos falsos con información como nombre, precio, descripción, categoría e imagen.
+      Es ideal para pruebas, prototipos y prácticas de consumo de APIs REST.
+    </p>
+  </div>
+
+  <!-- Información adicional -->
+  <div class="info-extra">
+    Versión de la app: V.1.0.0 <br>
+    GitHub: @duban77
+  </div>
+
+  <!-- Secciones existentes -->
   <section id="inicio">
     <input type="text" id="buscador" placeholder="Buscar productos...">
     <section id="destacado">
       <h2>Producto del día</h2>
       <div id="productoDestacado" class="producto"></div>
     </section>
-
     <select id="filtro">
       <option value="all">Todas las categorías</option>
       <option value="men's clothing">Hombres</option>
@@ -42,16 +91,13 @@
     </select>
   </section>
 
-  <!-- Productos -->
   <section id="productos" class="contenedor-productos"></section>
 
-  <!-- Favoritos -->
   <section id="favoritos">
     <h2 style="text-align: center; margin-bottom: 1rem; color: #ff4081;">❤️ Tus Favoritos</h2>
     <div id="contenedor-favoritos" class="contenedor-productos"></div>
   </section>
 
-  <!-- Registro -->
   <section id="registro">
     <h2>Registro</h2>
     <form id="formRegistro">
@@ -66,12 +112,13 @@
     </form>
   </section>
 
-  <!-- Footer (Menú inferior con 4 ítems) -->
+  <!-- Footer -->
   <footer>
     <a href="#inicio"><i class="fa fa-home"></i> Inicio</a>
     <a href="#productos"><i class="fa fa-search"></i> Buscar</a>
     <a href="#favoritos"><i class="fa fa-heart"></i> Favoritos</a>
     <a href="#registro"><i class="fa fa-user"></i> Perfil</a>
+    <p style="text-align: center; width: 100%; margin-top: 1rem;">Desarrollado por: Duban Salguero</p>
   </footer>
 
 </body>
