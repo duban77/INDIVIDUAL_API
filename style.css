@@ -1,285 +1,300 @@
 /* Reset básico */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  
-  body {
-    font-family: 'Segoe UI', sans-serif;
-    background-color: #f2f2f2;
-    color: #333;
-    padding-bottom: 80px;
-  }
-  
-  /* Top nav (pestañas) */
-  .top-nav {
-    display: flex;
-    justify-content: space-around;
-    background: #222;
-    padding: 15px 0;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-  }
-  
-  .top-nav a {
-    color: #fff;
-    text-decoration: none;
-    font-weight: bold;
-    transition: color 0.3s ease;
-  }
-  
-  .top-nav a:hover {
-    color: #ff9800;
-  }
-  
-  /* Secciones */
-  section {
-    padding: 2rem 1rem;
-  }
-  
-  /* Buscador y filtro */
-  #inicio input, #inicio select {
-    width: 100%;
-    max-width: 500px;
-    margin: 10px auto;
-    display: block;
-    padding: 12px;
-    font-size: 16px;
-    border: 2px solid #ddd;
-    border-radius: 10px;
-    background-color: #fff;
-  }
-  
-  /* Productos */
-  .contenedor-productos {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-    gap: 1.5rem;
-    padding: 1rem;
-  }
-  
-  .producto {
-    background-color: #fff;
-    border-radius: 15px;
-    padding: 1rem;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-    text-align: center;
-  }
-  
-  .producto:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 6px 15px rgba(0,0,0,0.15);
-  }
-  
-  .producto img {
-    max-height: 180px;
-    object-fit: contain;
-    margin-bottom: 10px;
-  }
-  
+  margin: 0; /* Elimina el margen predeterminado de todos los elementos */
+  padding: 0; /* Elimina el relleno predeterminado de todos los elementos */
+  box-sizing: border-box; /* Incluye los bordes y el relleno en el tamaño total de los elementos */
+}
+
+/* Estilo general para el body */
+body {
+  font-family: 'Segoe UI', sans-serif; /* Establece la fuente de texto general de la página */
+  background-color: #f2f2f2; /* Color de fondo gris claro */
+  color: #333; /* Color de texto oscuro */
+  padding-bottom: 80px; /* Relleno en la parte inferior para evitar que el contenido se solape con el pie de página fijo */
+}
+
+/* Estilo para la barra de navegación superior */
+.top-nav {
+  display: flex; /* Utiliza el modelo Flexbox para alinear los elementos */
+  justify-content: space-around; /* Distribuye los elementos con espacio entre ellos */
+  background: #222; /* Fondo oscuro para la barra de navegación */
+  padding: 15px 0; /* Relleno vertical de 15px */
+  position: sticky; /* La barra de navegación se queda fija en la parte superior */
+  top: 0; /* La barra se posiciona en la parte superior de la página */
+  z-index: 1000; /* Asegura que la barra de navegación esté por encima de otros elementos */
+}
+
+.top-nav a {
+  color: #fff; /* Color del texto blanco */
+  text-decoration: none; /* Elimina el subrayado de los enlaces */
+  font-weight: bold; /* Hace el texto en negrita */
+  transition: color 0.3s ease; /* Transición suave para el cambio de color */
+}
+
+.top-nav a:hover {
+  color: #ff9800; /* Cambia el color del enlace a un naranja cuando el usuario pasa el mouse sobre él */
+}
+
+/* Estilo para las secciones */
+section {
+  padding: 2rem 1rem; /* Relleno de 2rem arriba y abajo, 1rem a los lados */
+}
+
+/* Estilos para los inputs y selectores dentro del #inicio */
+#inicio input, #inicio select {
+  width: 100%; /* El ancho es del 100% del contenedor */
+  max-width: 500px; /* Limita el ancho máximo a 500px */
+  margin: 10px auto; /* Centra los elementos horizontalmente con un margen de 10px */
+  display: block; /* Hace que los elementos se comporten como bloques */
+  padding: 12px; /* Relleno interno de 12px */
+  font-size: 16px; /* Tamaño de fuente de 16px */
+  border: 2px solid #ddd; /* Borde de 2px gris claro */
+  border-radius: 10px; /* Bordes redondeados con un radio de 10px */
+  background-color: #fff; /* Fondo blanco */
+}
+
+/* Estilo para el contenedor de productos */
+.contenedor-productos {
+  display: grid; /* Utiliza el modelo Grid para organizar los productos */
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); /* Las columnas se ajustan automáticamente para que cada una tenga un mínimo de 240px */
+  gap: 1.5rem; /* Espacio de 1.5rem entre los elementos */
+  padding: 1rem; /* Relleno de 1rem */
+}
+
+/* Estilo para los productos individuales */
+.producto {
+  background-color: #fff; /* Fondo blanco */
+  border-radius: 15px; /* Bordes redondeados con un radio de 15px */
+  padding: 1rem; /* Relleno interno de 1rem */
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1); /* Sombra sutil alrededor del producto */
+  transition: transform 0.2s ease, box-shadow 0.2s ease; /* Transición para transformaciones y sombras */
+  text-align: center; /* Centra el texto dentro del producto */
+}
+
+.producto:hover {
+  transform: translateY(-5px); /* Eleva el producto ligeramente cuando el mouse pasa sobre él */
+  box-shadow: 0 6px 15px rgba(0,0,0,0.15); /* Sombra más pronunciada en el hover */
+}
+
+.producto img {
+  max-height: 180px; /* Establece una altura máxima para las imágenes */
+  object-fit: contain; /* Asegura que la imagen se ajuste manteniendo su aspecto */
+  margin-bottom: 10px; /* Espacio debajo de la imagen */
+}
+
+.producto h3 {
+  font-size: 18px; /* Tamaño de fuente para el título */
+  margin-bottom: 5px; /* Espacio debajo del título */
+}
+
+.producto p {
+  color: #777; /* Color de texto gris oscuro */
+  margin-bottom: 10px; /* Espacio debajo de la descripción */
+}
+
+.producto button {
+  background-color: #ff9800; /* Fondo naranja para el botón */
+  color: white; /* Texto blanco */
+  border: none; /* Sin borde */
+  padding: 10px 14px; /* Relleno dentro del botón */
+  border-radius: 8px; /* Bordes redondeados con radio de 8px */
+  cursor: pointer; /* Cambia el cursor a mano cuando se pasa por encima */
+  font-weight: bold; /* Texto en negrita */
+  transition: background-color 0.3s ease; /* Transición suave para el cambio de color */
+}
+
+.producto button:hover {
+  background-color: #e68900; /* Cambio de color de fondo a un tono más oscuro de naranja en el hover */
+}
+
+/* Estilo para el pie de página */
+footer {
+  position: fixed; /* El pie de página se mantiene fijo en la parte inferior */
+  bottom: 0; /* Se posiciona en la parte inferior de la ventana */
+  width: 100%; /* El pie de página ocupa todo el ancho */
+  background-color: #222; /* Fondo oscuro */
+  display: flex; /* Utiliza el modelo Flexbox para organizar los enlaces */
+  justify-content: space-around; /* Distribuye los elementos con espacio entre ellos */
+  align-items: center; /* Alinea los elementos verticalmente en el centro */
+  padding: 12px 0; /* Relleno vertical de 12px */
+  z-index: 999; /* Asegura que el pie de página esté por encima de otros elementos */
+}
+
+footer a {
+  color: white; /* Color blanco para los enlaces */
+  text-align: center; /* Centra el texto */
+  font-size: 14px; /* Tamaño de fuente de 14px */
+  text-decoration: none; /* Elimina el subrayado de los enlaces */
+  display: flex; /* Flexbox para organizar los iconos y texto */
+  flex-direction: column; /* Los elementos se colocan en una columna */
+  align-items: center; /* Centra los elementos dentro del enlace */
+  transition: color 0.3s; /* Transición suave para el cambio de color */
+}
+
+footer a:hover {
+  color: #ff9800; /* Cambia el color de los enlaces a naranja al pasar el mouse */
+}
+
+/* Estilos para el formulario de registro */
+#registro form {
+  max-width: 500px; /* El formulario tiene un ancho máximo de 500px */
+  margin: auto; /* Centra el formulario horizontalmente */
+  display: flex; /* Utiliza Flexbox para organizar los elementos dentro del formulario */
+  flex-direction: column; /* Los elementos se organizan en una columna */
+  gap: 12px; /* Espacio de 12px entre los elementos */
+}
+
+#registro input, #registro button {
+  padding: 12px; /* Relleno de 12px dentro de los inputs y botones */
+  font-size: 16px; /* Tamaño de fuente de 16px */
+  border: 2px solid #ccc; /* Borde gris claro para los inputs */
+  border-radius: 10px; /* Bordes redondeados con un radio de 10px */
+}
+
+#registro button {
+  background-color: #2196f3; /* Fondo azul para el botón */
+  color: white; /* Texto blanco */
+  font-weight: bold; /* Texto en negrita */
+  border: none; /* Sin borde */
+  cursor: pointer; /* Cambia el cursor a mano al pasar por encima */
+  transition: background-color 0.3s ease; /* Transición suave para el cambio de color */
+}
+
+#registro button:hover {
+  background-color: #1976d2; /* Cambio de color del fondo a un tono más oscuro de azul en el hover */
+}
+
+/* Estilos para la sección del producto destacado */
+#destacado {
+  background: #fff3e0; /* Fondo amarillo claro */
+  border-top: 2px solid #ffc107; /* Borde superior amarillo */
+  border-bottom: 2px solid #ffc107; /* Borde inferior amarillo */
+  padding: 2rem 1rem; /* Relleno de 2rem arriba y abajo, 1rem a los lados */
+  text-align: center; /* Centra el texto */
+}
+
+#destacado h2 {
+  margin-bottom: 1rem; /* Espacio debajo del título */
+  color: #ff9800; /* Color de texto naranja */
+}
+
+/* Estilos para la sección de contacto */
+#contacto {
+  text-align: center; /* Centra el texto */
+  padding: 2rem; /* Relleno de 2rem */
+  background-color: #e0f7fa; /* Fondo azul claro */
+  color: #006064; /* Color de texto oscuro */
+}
+
+/* Estilos para la barra de navegación secundaria (menú de enlaces) */
+nav {
+  background-color: #222; /* Fondo oscuro */
+  padding: 10px 0; /* Relleno vertical de 10px */
+  display: flex; /* Utiliza Flexbox para organizar los enlaces */
+  flex-wrap: wrap; /* Permite que los enlaces se envuelvan si es necesario */
+  justify-content: center; /* Centra los enlaces */
+  gap: 12px; /* Espacio entre los enlaces */
+}
+
+nav a {
+  color: white; /* Color blanco para los enlaces */
+  font-weight: bold; /* Texto en negrita */
+  text-decoration: none; /* Elimina el subrayado de los enlaces */
+  font-size: 16px; /* Tamaño de fuente de 16px */
+  padding: 6px 10px; /* Relleno de 6px arriba y abajo, 10px a los lados */
+  border-radius: 6px; /* Bordes redondeados con radio de 6px */
+  transition: background-color 0.3s ease; /* Transición suave para el cambio de color */
+}
+
+nav a:hover {
+  background-color: #444; /* Fondo gris oscuro en el hover */
+  color: orange; /* Cambia el color del texto a naranja en el hover */
+}
+
+/* Media query para dispositivos móviles */
+@media (max-width: 480px) {
   .producto h3 {
-    font-size: 18px;
-    margin-bottom: 5px;
+      font-size: 16px; /* Reduce el tamaño de fuente en dispositivos pequeños */
   }
-  
+
   .producto p {
-    color: #777;
-    margin-bottom: 10px;
+      font-size: 14px; /* Reduce el tamaño de fuente para la descripción */
   }
-  
+
   .producto button {
-    background-color: #ff9800;
-    color: white;
-    border: none;
-    padding: 10px 14px;
-    border-radius: 8px;
-    cursor: pointer;
-    font-weight: bold;
-    transition: background-color 0.3s ease;
+      padding: 8px 12px; /* Reduce el relleno del botón */
+      font-size: 14px; /* Reduce el tamaño de fuente del botón */
   }
-  
-  .producto button:hover {
-    background-color: #e68900;
-  }
-  
-  /* Footer (menú inferior) */
-  footer {
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    background-color: #222;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    padding: 12px 0;
-    z-index: 999;
-  }
-  
-  footer a {
-    color: white;
-    text-align: center;
-    font-size: 14px;
-    text-decoration: none;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    transition: color 0.3s;
-  }
-  
-  footer a:hover {
-    color: #ff9800;
-  }
-  
-  /* Registro */
-  #registro form {
-    max-width: 500px;
-    margin: auto;
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-  }
-  
+
   #registro input, #registro button {
-    padding: 12px;
-    font-size: 16px;
-    border: 2px solid #ccc;
-    border-radius: 10px;
+      font-size: 14px; /* Reduce el tamaño de fuente en los inputs y botones */
+      padding: 10px; /* Reduce el relleno */
   }
-  
-  #registro button {
-    background-color: #2196f3;
-    color: white;
-    font-weight: bold;
-    border: none;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
-  
-  #registro button:hover {
-    background-color: #1976d2;
-  }
-  
-  /* Producto destacado */
-  #destacado {
-    background: #fff3e0;
-    border-top: 2px solid #ffc107;
-    border-bottom: 2px solid #ffc107;
-    padding: 2rem 1rem;
-    text-align: center;
-  }
-  
-  #destacado h2 {
-    margin-bottom: 1rem;
-    color: #ff9800;
-  }
-  
-  /* Contacto */
-  #contacto {
-    text-align: center;
-    padding: 2rem;
-    background-color: #e0f7fa;
-    color: #006064;
-  }
-  nav {
-    background-color: #222;
-    padding: 10px 0;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 12px; /* separación entre ítems */
-  }
-  
-  nav a {
-    color: white;
-    font-weight: bold;
-    text-decoration: none;
-    font-size: 16px;
-    padding: 6px 10px;
-    border-radius: 6px;
-    transition: background-color 0.3s ease;
-  }
-  
-  nav a:hover {
-    background-color: #444;
-    color: orange;
-  }
-  @media (max-width: 480px) {
-    .producto h3 {
-      font-size: 16px;
-    }
-  
-    .producto p {
-      font-size: 14px;
-    }
-  
-    .producto button {
-      padding: 8px 12px;
-      font-size: 14px;
-    }
-  
-    #registro input, #registro button {
-      font-size: 14px;
-      padding: 10px;
-    }
-  }
-  body {
-    background-image: url('img/representativa.png');
-    background-size: cover;
-    background-attachment: fixed;
-  }
-  .descripcion-api {
-    background-color: rgba(255, 255, 255, 0.9);
-    padding: 1rem;
-    margin: 2rem;
-    border-radius: 10px;
-    max-width: 600px;
-    margin-left: auto;
-    margin-right: auto;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-  }
-  .info-extra {
-    text-align: center;
-    margin-top: 1rem;
-    font-weight: bold;
-    color: #333;
-  }
-  .imagen-api {
-    display: block;
-    margin: 1rem auto;
-    max-width: 300px;
-  }
-  footer {
-    background-color: #222;
-    color: white;
-    padding: 1rem 0;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    flex-wrap: wrap;
-  }
-  
-  footer a {
-    color: white;
-    text-decoration: none;
-    font-size: 0.9rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin: 0 10px;
-  }
-  
-  footer a i {
-    font-size: 1.2rem;
-    margin-bottom: 0.2rem;
-  }
-  
-  footer p {
-    width: 100%;
-    text-align: center;
-    margin-top: 1rem;
-    font-size: 0.85rem;
-  }
-  
+}
+
+/* Estilo de fondo con imagen */
+body {
+  background-image: url('img/representativa.png'); /* Establece una imagen de fondo */
+  background-size: cover; /* Asegura que la imagen cubra todo el fondo */
+  background-attachment: fixed; /* La imagen se fija al fondo cuando se hace scroll */
+}
+
+/* Estilo para la descripción de la API */
+.descripcion-api {
+  background-color: rgba(255, 255, 255, 0.9); /* Fondo blanco con opacidad */
+  padding: 1rem; /* Relleno de 1rem */
+  margin: 2rem; /* Margen de 2rem alrededor del elemento */
+  border-radius: 10px; /* Bordes redondeados con radio de 10px */
+  max-width: 600px; /* Ancho máximo de 600px */
+  margin-left: auto; /* Centra el elemento horizontalmente */
+  margin-right: auto; /* Centra el elemento horizontalmente */
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2); /* Sombra suave alrededor */
+}
+
+/* Información extra dentro de la descripción */
+.info-extra {
+  text-align: center; /* Centra el texto */
+  margin-top: 1rem; /* Espacio superior de 1rem */
+  font-weight: bold; /* Texto en negrita */
+  color: #333; /* Color de texto oscuro */
+}
+
+/* Estilo para las imágenes dentro de la API */
+.imagen-api {
+  display: block; /* Hace que la imagen se muestre como bloque */
+  margin: 1rem auto; /* Centra la imagen con margen de 1rem arriba y abajo */
+  max-width: 300px; /* Ancho máximo de la imagen */
+}
+
+/* Estilos finales para el pie de página */
+footer {
+  background-color: #222; /* Fondo oscuro */
+  color: white; /* Texto blanco */
+  padding: 1rem 0; /* Relleno de 1rem arriba y abajo */
+  display: flex; /* Utiliza Flexbox para organizar los elementos */
+  justify-content: space-around; /* Distribuye los elementos con espacio entre ellos */
+  align-items: center; /* Centra los elementos verticalmente */
+  flex-wrap: wrap; /* Permite que los elementos se envuelvan si es necesario */
+}
+
+footer a {
+  color: white; /* Color blanco para los enlaces */
+  text-decoration: none; /* Elimina el subrayado de los enlaces */
+  font-size: 0.9rem; /* Tamaño de fuente de 0.9rem */
+  display: flex; /* Flexbox para organizar los iconos y texto */
+  flex-direction: column; /* Los elementos se colocan en una columna */
+  align-items: center; /* Centra los elementos dentro del enlace */
+  margin: 0 10px; /* Margen de 10px a los lados */
+}
+
+footer a i {
+  font-size: 1.2rem; /* Tamaño de los iconos */
+  margin-bottom: 0.2rem; /* Espacio debajo de los iconos */
+}
+
+footer p {
+  width: 100%; /* El párrafo ocupa todo el ancho disponible */
+  text-align: center; /* Centra el texto */
+  margin-top: 1rem; /* Espacio superior de 1rem */
+  font-size: 0.85rem; /* Tamaño de fuente más pequeño para el pie de página */
+}
