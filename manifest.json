@@ -1,7 +1,7 @@
 {
-  "name": "Feriados Colombia",
-  "short_name": "FeriadosCO",
-  "description": "Consulta los feriados oficiales de Colombia del año 2025.",
+  "name": "fakestoreapi",
+  "short_name": "fakestore",
+  "description": "tienda fakestore.",
   "start_url": ".",
   "display": "standalone",
   "background_color": "#ffffff",
