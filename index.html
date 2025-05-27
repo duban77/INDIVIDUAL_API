@@ -1,53 +1,33 @@
 <!DOCTYPE html>
-<!-- Indica que el documento está escrito en HTML5 -->
-
 <html lang="es">
-<!-- Comienza el documento HTML, con el idioma español especificado -->
 
 <head>
-  <!-- Encabezado del documento, contiene metadatos y enlaces a recursos -->
-
   <meta charset="UTF-8" />
-  <!-- Define la codificación de caracteres como UTF-8 para soportar caracteres especiales -->
-
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <!-- Permite el diseño responsivo, ajustando el ancho al dispositivo del usuario -->
 
   <title>FakeStore Web - API FakeStore</title>
-  <!-- Título que se mostrará en la pestaña del navegador -->
 
   <link rel="stylesheet" href="style.css" />
-  <!-- Vincula una hoja de estilos externa llamada style.css -->
-
   <link rel="icon" href="assets/logo.png" />
-  <!-- Define un ícono para la pestaña del navegador (favicon) -->
 
+  <!-- Enlaces a scripts -->
   <script src="js/productos.js" defer></script>
-  <!-- Carga el script de productos de manera diferida -->
-
   <script src="js/buscador.js" defer></script>
-  <!-- Carga el script del buscador de manera diferida -->
-
   <script src="js/filtro.js" defer></script>
-  <!-- Carga el script de filtrado de productos de manera diferida -->
-
   <script src="js/favoritos.js" defer></script>
-  <!-- Carga el script que gestiona productos favoritos de manera diferida -->
-
   <script src="js/registro.js" type="module" defer></script>
-  <!-- Carga el script del registro como módulo ES6, de manera diferida -->
 
+  <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-  <!-- Enlace a los iconos de Font Awesome para usar en botones e íconos visuales -->
 
+  <!-- PWA Manifest & Theme -->
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#0033a0">
 </head>
 
 <body>
-<!-- Cuerpo principal del sitio web -->
-
   <!-- Navegación Superior -->
   <nav>
-    <!-- Barra de navegación con enlaces a secciones del sitio -->
     <a href="#inicio">Inicio</a>
     <a href="#productos">Productos</a>
     <a href="#categorias">Categorías</a>
@@ -56,39 +36,31 @@
     <a href="#contacto">Contacto</a>
   </nav>
 
-  <!-- Título principal de la página -->
   <h1 style="text-align: center; margin-top: 2rem;">API Utilizada: FakeStore API</h1>
-
-  <!-- Imagen representativa de la API -->
   <img src="img/representativa.png" alt="Imagen relacionada con la API" class="imagen-api" />
 
-  <!-- Descripción de la API FakeStore -->
   <div class="descripcion-api">
     <h2>¿Qué es FakeStore API?</h2>
     <p>
-      FakeStore API es una API gratuita que proporciona productos falsos con información como nombre, precio, descripción, categoría e imagen.
+      FakeStore API es una API gratuita que proporciona productos falsos con información como nombre, precio,
+      descripción, categoría e imagen.
       Es ideal para pruebas, prototipos y prácticas de consumo de APIs REST.
     </p>
   </div>
 
-  <!-- Información adicional sobre la app -->
   <div class="info-extra">
     Versión de la app: V.1.0.0 <br>
     GitHub: @duban77
   </div>
 
-  <!-- Sección principal con funcionalidades -->
   <section id="inicio">
-    <!-- Input de búsqueda de productos -->
     <input type="text" id="buscador" placeholder="Buscar productos...">
 
-    <!-- Producto destacado del día -->
     <section id="destacado">
       <h2>Producto del día</h2>
       <div id="productoDestacado" class="producto"></div>
     </section>
 
-    <!-- Filtro por categoría -->
     <select id="filtro">
       <option value="all">Todas las categorías</option>
       <option value="men's clothing">Hombres</option>
@@ -98,16 +70,13 @@
     </select>
   </section>
 
-  <!-- Contenedor de productos -->
   <section id="productos" class="contenedor-productos"></section>
 
-  <!-- Sección de favoritos del usuario -->
   <section id="favoritos">
     <h2 style="text-align: center; margin-bottom: 1rem; color: #ff4081;">❤️ Tus Favoritos</h2>
     <div id="contenedor-favoritos" class="contenedor-productos"></div>
   </section>
 
-  <!-- Formulario de registro de usuario -->
   <section id="registro">
     <h2>Registro</h2>
     <form id="formRegistro">
@@ -122,7 +91,6 @@
     </form>
   </section>
 
-  <!-- Pie de página con navegación adicional -->
   <footer>
     <a href="#inicio"><i class="fa fa-home"></i> Inicio</a>
     <a href="#productos"><i class="fa fa-search"></i> Buscar</a>
@@ -131,5 +99,14 @@
     <p style="text-align: center; width: 100%; margin-top: 1rem;">Desarrollado por: Duban Salguero</p>
   </footer>
 
+  <!-- Registro del Service Worker -->
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('./service-worker.js')
+        .then(() => console.log('Service Worker registrado'))
+        .catch(error => console.error('SW error:', error));
+    }
+  </script>
 </body>
+
 </html>
