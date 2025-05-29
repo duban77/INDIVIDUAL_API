@@ -1,9 +1,11 @@
 {
-  "name": "fakestoreapi",
-  "short_name": "fakestore",
-  "description": "tienda fakestore.",
-  "start_url": ".",
+  "name": "FakeStore Web",
+  "short_name": "FakeStore",
+  "description": "Tienda de productos de prueba basada en la API FakeStore.",
+  "start_url": "/INDIVIDUAL_API/index.html",
+  "scope": "/INDIVIDUAL_API/",
   "display": "standalone",
+  "orientation": "portrait",
   "background_color": "#ffffff",
   "theme_color": "#0033a0",
   "icons": [
@@ -16,6 +18,18 @@
       "src": "icons/icon-512.png",
       "sizes": "512x512",
       "type": "image/png"
+    },
+    {
+      "src": "icons/icon-foreground.png",
+      "sizes": "1024x1024",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "icons/icon-background.png",
+      "sizes": "1024x1024",
+      "type": "image/png",
+      "purpose": "any"
     }
   ]
 }
